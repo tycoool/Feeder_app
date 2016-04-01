@@ -2,7 +2,7 @@
 
 ## Description
 
-RSS reader for NY Times RSS feeds.
+Reader for NY Times RSS feeds.
 
 ## Specifications
 
