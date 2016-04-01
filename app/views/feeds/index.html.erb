@@ -1,0 +1,28 @@
+
+<h1 class="page-header">Active Feeds</h1>
+
+<%= render :partial=>"feeds/feed_partials/table_navbar"%>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'feeds/feed_partials/table_body', collection: @feeds, as: :feed %>
+    </tbody>
+  </table>
+  <%= will_paginate @feeds, renderer: BootstrapPagination::Rails %>
+</div>
+<br>
+
+
+
+
+
+
+

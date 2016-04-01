@@ -1,0 +1,20 @@
+<tr>
+  <td>
+    <div class="dropdown">
+      <button class="btn btn-default  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Actions
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li>
+          <%= link_to 'Edit', edit_feed_path(feed) %>
+        </li>
+        <li>
+          <%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+      </ul>
+    </div>
+  </td>
+  <td><%= feed.name %></td>
+  <td><%= link_to(feed.url, feed.url, target: "_blank") %></td>
+</tr>

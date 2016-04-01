@@ -1,0 +1,5 @@
+do_import_feeds:
+  cron: "*/5 * * * * " #run every 5 min
+  queue: import_all_feeds
+  class: ImportAllFeeds
+  description: Updates Feed Entries

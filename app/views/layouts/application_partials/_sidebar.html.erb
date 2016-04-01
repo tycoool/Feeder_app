@@ -1,0 +1,38 @@
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li>
+      <%= link_to(new_feed_path) do %>
+        <button type='button' class='btn btn-default' style='width:100%;color:steelblue;'>
+          <span class='glyphicon glyphicon-plus' aria-hidden='true'></span> New Feed
+        </button>
+      <% end %>
+    </li>
+    <br>
+    <li class="<%= active_class(entries_path) if params[:likes]!="true" %> <%= active_class(root_path) if params[:likes]!="true" %>">
+        <%= link_to(entries_path) do %>
+          <span class='glyphicon glyphicon-list-alt' aria-hidden='true'></span> &nbsp;Recent Articles
+          &nbsp;
+          <span class="badge badge-outline"><%= Entry.count %></span>
+        <% end %>
+    </li>
+    <li class="<%= active_class(entries_path) if params[:likes]=="true" %>">
+      <%= link_to(entries_path(likes: "true")) do %>
+        <span class='glyphicon glyphicon-heart' aria-hidden='true'></span> &nbsp;Favorites
+        &nbsp;
+        <%= render partial: 'layouts/application_partials/likes' %>
+      <% end %>
+    </li>
+    <li class="<%= active_class(feeds_path) %>">
+      <%= link_to(feeds_path) do %>
+        <span class='glyphicon glyphicon-pushpin' aria-hidden='true'></span> &nbsp;Manage Feeds
+      <% end %>
+    </li>
+  </ul>
+
+  <%if Rails.env.development?%>
+    <!-- Debugging Stuff -->
+    <ul class="nav nav-sidebar">
+      <li><a href="<%="/resque"%>" target="_blank">Resque Dashboard</a></li>
+    </ul>
+  <% end %>
+</div>

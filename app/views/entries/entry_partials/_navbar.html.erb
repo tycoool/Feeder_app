@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="container-fluid">
+
+    <%= search_form_for @q, :html => { :class => 'navbar-form navbar-left', :style =>"margin-left:-30px;" }  do |f| %>
+      <div class="form-group">
+        <%= hidden_field_tag :likes, params[:likes] %>
+        <%= f.search_field :title_or_content_cont, :class => 'form-control', :placeholder => "Search", autofocus: true  %>
+      </div>
+      <%= f.submit "Submit", :class => 'btn btn-default' %>
+    <%end%>
+
+  </div>
+</nav>

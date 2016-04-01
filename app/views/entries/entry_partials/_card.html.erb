@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+  <div class="panel-body" style='text-align:left;'>
+    
+    <%= link_to(toggle_like_path(entry), method: :patch, remote: true) do %>
+      <span class="glyphicon glyphicon-heart like <%= 'like_active' if entry.like %>" aria-hidden="true">
+      </span>
+    <% end %>
+
+    <h3>
+      <a href="<%= entry.url %>" target="_blank"><%= entry.title.html_safe %></a>
+    </h3>
+    <span class="text-muted">
+      <strong>
+        <%= entry.published.in_time_zone("Pacific Time (US & Canada)").strftime('%b %e %Y') %>
+      </strong> - <%= entry.published.in_time_zone("Pacific Time (US & Canada)").strftime('at %I:%M%P %Z') %>
+      <br><br>
+      <%= strip_tags(entry.try(:content)) %>
+      <hr>
+      <small>
+        <strong><%= entry.feed.name %></strong>
+      </small>
+    </span>
+  </div>
+</div>

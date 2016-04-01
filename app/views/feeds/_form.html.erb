@@ -1,0 +1,12 @@
+<%= simple_form_for(@feed) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "Feed Name" %>
+    <%= f.input :url , label: "Feed URL",placeholder: "http://rss.nytimes.com", hint: "HINT: Only NY Times feeds are allowed: <a href='http://www.nytimes.com/services/xml/rss/index.html' target='_blank'> examples<a/>".html_safe%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="container-fluid">
+
+    <%= search_form_for @q, :html => { :class => 'navbar-form navbar-left', :style =>"margin-left:-30px;" }  do |f| %>
+      <div class="form-group">
+        <%= f.search_field :name_or_url_cont, :class => 'form-control', :placeholder => "Search", autofocus: true  %>
+      </div>
+      <%= f.submit "Submit", :class => 'btn btn-default' %>
+    <%end%>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to '+ New Feed', new_feed_path %></li>
+    </ul>
+  </div>
+</nav>

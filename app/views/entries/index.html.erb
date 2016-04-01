@@ -1,0 +1,15 @@
+<%= render :partial=>"entries/entry_partials/navbar" %>
+<div class="row placeholders" style="margin-bottom:0px;">
+  <div class="col-xs-12 col-sm-12 placeholder">
+    <%= render partial: 'entries/entry_partials/card', collection: @entries, as: :entry %>
+    <%= will_paginate @entries, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    $( ".like" ).click(function() {
+      $( this ).toggleClass("like_active");
+    });
+  });
+</script>
