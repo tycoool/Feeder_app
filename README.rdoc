@@ -1,10 +1,8 @@
-# Content Service
+# NY Times Feeder
 
 ## Description
 
-It provides content extraction and previewing as a service and as a web-server. You may use the service to extract
-content from URLs, PDFs, txt files and an assortment of file types. You are able to tailor the content extraction
-by creating rules and filters for domains and data so that it finds the correct content.
+RSS reader for NY Times RSS feeds.
 
 ## Specifications
 
