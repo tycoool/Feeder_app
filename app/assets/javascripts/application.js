@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-formhelpers.min.js
+//= require likes.js
