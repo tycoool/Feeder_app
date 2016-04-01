@@ -10,12 +10,12 @@
     <br>
     <li class="<%= active_class(entries_path) if params[:likes]!="true" %> <%= active_class(root_path) if params[:likes]!="true" %>">
         <%= link_to(entries_path) do %>
-          <span class='glyphicon glyphicon-list-alt' aria-hidden='true'></span> &nbsp;Recent Articles
+          <span class='glyphicon glyphicon-list-alt' aria-hidden='true'></span> &nbsp;All Articles
           &nbsp;
           <span class="badge badge-outline"><%= Entry.count %></span>
         <% end %>
     </li>
-    <li class="<%= active_class(entries_path) if params[:likes]=="true" %>">
+    <li class="<%= active_class(entries_path) if params[:likes]=="true" %> <%= active_class(root_path) if params[:likes]=="true" %>">
       <%= link_to(entries_path(likes: "true")) do %>
         <span class='glyphicon glyphicon-heart' aria-hidden='true'></span> &nbsp;Favorites
         &nbsp;

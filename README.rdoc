@@ -1,21 +1,74 @@
-== README
+# Content Service
+
+## Description
+
+It provides content extraction and previewing as a service and as a web-server. You may use the service to extract
+content from URLs, PDFs, txt files and an assortment of file types. You are able to tailor the content extraction
+by creating rules and filters for domains and data so that it finds the correct content.
+
+## Specifications
+
+ * Ruby version
+
+   ```
+      >= 2.2.1
+   ```
+
+ * System dependencies:
+
+   ```
+      postgresql >= 9.3
+   ```
+
+ * Database creation
+
+   ```
+      bin/rake db:create:all
+   ```
+
+ * Database initialization
+
+   ```
+      bin/rake db:migrate
+   ```
+
+ * Database setup
+
+   ```
+      bin/rake db:seed
+   ```
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ * How to run the test suite
 
-Things you may want to cover:
+   ```
+      bin/rspec
+   ```
 
-* Ruby version
 
-* System dependencies
+ * How to run the server locally
 
-* Configuration
+   ```
+      bin/rails s
+   ```
 
-* Database creation
+   ```
+      open http://localhost:3000
+   ```
 
-* Database initialization
+ * How to run worker processes & scheduler
 
-* How to run the test suite
+   Launch redis server:
+   ```
+      redis-server
+   ```
 
-* Services (job queues, cache servers, search engines, etc.)
+   Launch resque-pool for concurrency:
+   ```
+      env TERM_CHILD=1 VVERBOSE=1 WORKER_CONCURRENCY=2 bundle exec resque-pool --environment development
+   ```
+
+   Launch resque scheuler for scheduled jobs:
+   ```
+      rake resque:scheduler
+   ```

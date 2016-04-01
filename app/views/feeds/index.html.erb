@@ -16,13 +16,6 @@
       <%= render partial: 'feeds/feed_partials/table_body', collection: @feeds, as: :feed %>
     </tbody>
   </table>
-  <%= will_paginate @feeds, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @feeds, renderer: BootstrapPagination::Rails, :page_links=>false %>
 </div>
 <br>
-
-
-
-
-
-
-
