@@ -5,7 +5,8 @@ one:
   published: 2016-03-30 10:09:29
   content: MyText
   url: MyString
-  author: MyString
+  like: false
+  g_id: gid2
   feed_id: 1
 
 two:
@@ -13,5 +14,6 @@ two:
   published: 2016-03-30 10:09:29
   content: MyText
   url: MyString
-  author: MyString
-  feed_id: 1
+  like: false
+  g_id: gid2
+  feed_id: 2

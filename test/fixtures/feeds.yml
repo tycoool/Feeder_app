@@ -1,9 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  url: MyString
+  id: 1
+  name: MyFeed_1
+  url: http://rss.nytimes.com/services/xml/rss/nyt/Education.xml
+  created_at: 2016-03-30 10:09:29
+  updated_at: 2016-03-30 10:09:29
 
 two:
-  name: MyString
-  url: MyString
+  id: 2
+  name: MyFeed_2
+  url: http://rss.nytimes.com/services/xml/rss/nyt/Politics.xml
+  created_at: 2016-03-30 10:09:29
+  updated_at: 2016-03-30 10:09:29

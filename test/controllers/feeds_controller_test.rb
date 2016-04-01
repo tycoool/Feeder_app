@@ -2,6 +2,9 @@ require 'test_helper'
 
 class FeedsControllerTest < ActionController::TestCase
   setup do
+    # Basic authentication
+    credentials = ActionController::HttpAuthentication::Basic.encode_credentials '', ''
+    request.env['HTTP_AUTHORIZATION'] = credentials
     @feed = feeds(:one)
   end
 
@@ -18,7 +21,7 @@ class FeedsControllerTest < ActionController::TestCase
 
   test "should create feed" do
     assert_difference('Feed.count') do
-      post :create, feed: { name: @feed.name, url: @feed.url }
+      post :create, feed: { name: "MyFeed_3", url: 'http://rss.nytimes.com/services/xml/rss/nyt/Science.xml' }
     end
 
     assert_redirected_to feed_path(assigns(:feed))
